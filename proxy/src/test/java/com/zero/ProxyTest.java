@@ -36,12 +36,12 @@ public class ProxyTest {
         //由代理工厂生成代理对象
         UserService proxy = (UserService)new ProxyFactory(target).getProxyInstance();
         //查看代理类型
-        System.out.println(proxy);
+        System.out.println(proxy.getClass());
         //执行登录操作
         proxy.login();
     }
-
     @Test
+
     //测试Cglib动态代理
     public void testCglib()  {
         //创建被代理对象
@@ -51,7 +51,7 @@ public class ProxyTest {
         //由代理工厂生成代理对象
         ZeroService proxy = (ZeroService)new ProxyFactoryC(target).getProxyInstance();
         //查看代理类型
-        System.out.println(proxy);
+        System.out.println(proxy.getClass());
         //执行登录操作
         proxy.login();
     }
